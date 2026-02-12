@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard Souza | Software Engineer</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+    <div class="bg-wrapper">
+        <div class="aurora"></div>
+        <div class="grid-lines"></div>
+    </div>
+
+    <div class="container">
+        <div class="toolbar fade-in">
+            <button id="theme-toggle" class="tool-btn" aria-label="Toggle Theme">
+                <i class="fas fa-sun"></i>
+            </button>
+            <button id="lang-toggle" class="tool-btn" aria-label="Switch Language">
+                <span class="lang-text">EN</span>
+            </button>
+        </div>
+
+        <header>
+            <div class="profile-wrapper">
+                <img src="assets/anos.gif" alt="Richard Souza" class="profile-pic">
+            </div>
+            
+            <div class="academic-badge reveal">
+                <i class="fas fa-graduation-cap"></i> 
+                <span data-i18n="academic">Systems Analysis & Dev • 4th Semester</span>
+            </div>
+            
+            <h1 class="reveal">Richard Souza</h1>
+            
+            <div class="typewriter-container reveal">
+                <span id="typewriter"></span>
+            </div>
+
+            <div class="about-me reveal">
+                <p data-i18n="about">
+                    I transform coffee into clean, scalable code. My passion lies at the intersection between 
+                    <strong>Robust Software Engineering</strong> (Backend/Database) and 
+                    <strong>Interactive Creativity</strong> (Game Dev on Roblox).
+                </p>
+            </div>
+
+            <div class="social-container reveal">
+                <a href="https://www.linkedin.com/in/richard-souza-lelling-723558277" target="_blank" class="social-card">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/RichardSouzaLlg" target="_blank" class="social-card">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="#contact-area" class="social-card discord-card">
+                    <i class="fab fa-discord"></i> <span data-i18n="btn_contact">Contact Me</span>
+                </a>
+                <a href="https://www.instagram.com/richard_souzallg" target="_blank" class="social-card">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+            </div>
+        </header>
+
+        <div class="tabs-container reveal">
+            <button class="tab-btn active" onclick="openTab('web')" data-target="web">
+                <i class="fas fa-code"></i> Fullstack Web
+            </button>
+            <button class="tab-btn" onclick="openTab('roblox')" data-target="roblox">
+                <i class="fas fa-gamepad"></i> Roblox Engineering
+            </button>
+        </div>
+
+        <section id="web" class="skills-section active">
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon web-icon"><i class="fas fa-database"></i></div>
+                        <div>
+                            <div class="skill-name">Backend & DB</div>
+                            <div class="skill-hours" data-i18n="hours_82">82h of study</div>
+                        </div>
+                    </div>
+                    <p class="skill-details" data-i18n="desc_backend">SQL Server, PostgreSQL, Python (Flask) & C# (.NET Core).</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon web-icon"><i class="fab fa-js"></i></div>
+                        <div>
+                            <div class="skill-name">Frontend & JS</div>
+                            <div class="skill-hours" data-i18n="hours_1480">1480h+ of Study</div>
+                        </div>
+                    </div>
+                    <p class="skill-details" data-i18n="desc_js">ES6+, DOM Manipulation, HTML5/CSS3 (1002h accumulated).</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon web-icon"><i class="fab fa-python"></i></div>
+                        <div>
+                            <div class="skill-name">Python Automation</div>
+                            <div class="skill-hours" data-i18n="hours_290">290h of Study</div>
+                        </div>
+                    </div>
+                    <p class="skill-details" data-i18n="desc_python">Discord Bots, scripts & basic Data Science.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon web-icon"><i class="fas fa-microchip"></i></div>
+                        <div>
+                            <div class="skill-name">C# & .NET</div>
+                            <div class="skill-hours" data-i18n="hours_40">40h of Study</div>
+                        </div>
+                    </div>
+                    <p class="skill-details" data-i18n="desc_csharp">Corporate applications & OOP logic.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="roblox" class="skills-section">
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon roblox-icon"><i class="fas fa-scroll"></i></div>
+                        <div>
+                            <div class="skill-name">Luau Scripter</div>
+                            <div class="skill-hours" data-i18n="hours_212">212h of Study</div>
+                        </div>
+                    </div>
+                    <p class="skill-details" data-i18n="desc_luau">Advanced OOP, Optimization & Anti-Cheat security.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon roblox-icon"><i class="fas fa-layer-group"></i></div>
+                        <div class="skill-name">UI/UX Designer</div>
+                    </div>
+                    <p class="skill-details" data-i18n="desc_ui">Immersive Scalable GUIs & User Experience.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon roblox-icon"><i class="fas fa-magic"></i></div>
+                        <div class="skill-name">VFX Artist</div>
+                    </div>
+                    <p class="skill-details" data-i18n="desc_vfx">Particle systems & shaders for combat abilities.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon roblox-icon"><i class="fas fa-cubes"></i></div>
+                        <div class="skill-name">Builder</div>
+                    </div>
+                    <p class="skill-details" data-i18n="desc_build">Detailed & optimized map construction.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="companies-section reveal">
+            <p class="companies-title" data-i18n="companies_title">Trusted by / Worked with</p>
+            
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="logo-item"><img src="assets/amazon-logo-0-2048x2048.png" alt="Company 1"></div>
+                    <div class="logo-item"><img src="assets/google-logo-0-2048x2048.png" alt="Company 2"></div>
+                    <div class="logo-item"><img src="assets/icons8-roblox-logo-144.png" alt="Company 3"></div>
+                    <div class="logo-item"><img src="assets/blender_logo_socket-1-1280x391.png" alt="Company 4"></div>
+                    <div class="logo-item"><img src="assets/onex.png" alt="Company 5"></div>
+
+                    <div class="logo-item"><img src="assets/amazon-logo-0-2048x2048.png" alt="Company 1"></div>
+                    <div class="logo-item"><img src="assets/google-logo-0-2048x2048.png" alt="Company 2"></div>
+                    <div class="logo-item"><img src="assets/icons8-roblox-logo-144.png" alt="Company 3"></div>
+                    <div class="logo-item"><img src="assets/blender_logo_socket-1-1280x391.png" alt="Company 4"></div>
+                    <div class="logo-item"><img src="assets/onex.png" alt="Company 5"></div>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="section-title reveal" data-i18n="title_projects">Selected Projects</h2>
+        
+        <div class="projects-grid">
+            <div class="project-card reveal">
+                <div class="img-wrapper">
+                    <div class="project-img" style="background-image: url('assets/dkz.png');"></div>
+                </div>
+                <div class="project-content">
+                    <div class="tags-row"><span class="tag web">HTML</span><span class="tag web">JS</span><span class="tag web">CSS</span></div>
+                    <h3 class="project-title">DKZ Developer Port</h3>
+                    <p class="project-desc" data-i18n="proj_dkz">Professional site for a high-profile game developer.</p>
+                    <a href="https://www.dkzdev.com" target="_blank" class="btn-project" data-i18n="btn_code">View Code <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="img-wrapper">
+                    <div class="project-img" style="background-image: url('assets/Eclipse.png');"></div>
+                </div>
+                <div class="project-content">
+                    <div class="tags-row"><span class="tag web">HTML</span><span class="tag web">CSS</span></div>
+                    <h3 class="project-title">Studio Website</h3>
+                    <p class="project-desc" data-i18n="proj_eclipse">Professional site for a moderation studio.</p>
+                    <a href="https://eclipse-ten-beta.vercel.app" target="_blank" class="btn-project" data-i18n="btn_code">View Code <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="img-wrapper">
+                    <div class="project-img" style="background-image: url('assets/infi.png');"></div>
+                </div>
+                <div class="project-content">
+                    <div class="tags-row"><span class="tag web">HTML</span><span class="tag web">JS</span><span class="tag web">CSS</span></div>
+                    <h3 class="project-title">Moderator Portfolio</h3>
+                    <p class="project-desc" data-i18n="proj_infi">Professional portfolio for a Community Moderator.</p>
+                    <a href="https://infi-port.vercel.app" target="_blank" class="btn-project" data-i18n="btn_code">View Code <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="img-wrapper">
+                    <div class="project-img" style="background-image: url('assets/pag.png');"></div>
+                </div>
+                <div class="project-content">
+                    <div class="tags-row"><span class="tag web">HTML</span><span class="tag web">JS</span><span class="tag web">CSS</span></div>
+                    <h3 class="project-title">Payment Integration</h3>
+                    <p class="project-desc" data-i18n="proj_pag">Payment gateway integration showcase.</p>
+                    <a href="https://pag-porti.vercel.app" target="_blank" class="btn-project" data-i18n="btn_code">View Code <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="img-wrapper">
+                    <div class="project-img" style="background-image: url('assets/studio.png');"></div>
+                </div>
+                <div class="project-content">
+                    <div class="tags-row"><span class="tag web">HTML</span><span class="tag web">JS</span><span class="tag web">CSS</span></div>
+                    <h3 class="project-title">Game Studio Hub</h3>
+                    <p class="project-desc" data-i18n="proj_studio">Professional template for Game Studios.</p>
+                    <a href="https://model-studio-for-games.vercel.app" target="_blank" class="btn-project" data-i18n="btn_code">View Code <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="img-wrapper">
+                    <div class="project-img" style="background-image: url('assets/curso.png');"></div>
+                </div>
+                <div class="project-content">
+                    <div class="tags-row"><span class="tag web">HTML</span><span class="tag web">JS</span><span class="tag web">CSS</span></div>
+                    <h3 class="project-title">Course Landing Page</h3>
+                    <p class="project-desc" data-i18n="proj_curso">Sales landing page for client acquisition.</p>
+                    <a href="https://painel-de-venda.vercel.app" target="_blank" class="btn-project" data-i18n="btn_code">View Code <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="img-wrapper">
+                    <div class="project-img" style="background-image: url('assets/store.png');"></div>
+                </div>
+                <div class="project-content">
+                    <div class="tags-row"><span class="tag web">HTML</span><span class="tag web">JS</span><span class="tag web">CSS</span></div>
+                    <h3 class="project-title">Virtual Store</h3>
+                    <p class="project-desc" data-i18n="proj_store">E-commerce website with cart logic.</p>
+                    <a href="https://p-gina-de-vendas.vercel.app" target="_blank" class="btn-project" data-i18n="btn_code">View Code <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="img-wrapper">
+                    <div class="project-img" style="background-image: url('assets/dog.png');"></div>
+                </div>
+                <div class="project-content">
+                    <div class="tags-row"><span class="tag web">HTML</span><span class="tag web">JS</span><span class="tag web">CSS</span></div>
+                    <h3 class="project-title">The Dog API</h3>
+                    <p class="project-desc" data-i18n="proj_dog">Application consuming The Dog API.</p>
+                    <a href="#" target="_blank" class="btn-project" data-i18n="btn_code">View Code <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <section id="contact-area" class="reveal">
+            <div class="glass-container">
+                <div class="contact-visual">
+                    <h2 class="section-title" data-i18n="contact_title">Get in Touch</h2>
+                    <p class="contact-text" data-i18n="contact_sub">Have an idea or a project? Let's build the future together. Send me a direct message.</p>
+                    
+                    <div class="visual-decoration">
+                        <i class="fas fa-paper-plane floating-icon"></i>
+                        <div class="orbit"></div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form id="discord-form">
+                        <div class="input-wrapper">
+                            <input type="text" id="contact-name" name="name" required placeholder=" " autocomplete="off">
+                            <label for="contact-name">Name / Company</label>
+                            <div class="input-border"></div>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <input type="email" id="contact-email" name="email" required placeholder=" " autocomplete="off">
+                            <label for="contact-email">Email Address</label>
+                            <div class="input-border"></div>
+                        </div>
+
+                        <div class="input-wrapper full-width">
+                            <textarea id="contact-msg" name="message" required placeholder=" " rows="4"></textarea>
+                            <label for="contact-msg">Your Message</label>
+                            <div class="input-border"></div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span data-i18n="btn_send">Send Launch</span> <i class="fas fa-rocket"></i>
+                        </button>
+                    </form>
+                    <div id="feedback-msg"></div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Richard Souza. <span data-i18n="footer">Made with code and coffee.</span></p>
+        </footer>
+    </div>
+
+    <script src="script/main.js"></script>
+</body>
+</html>
