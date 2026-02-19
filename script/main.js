@@ -18,8 +18,7 @@ const translations = {
         desc_ui: "Immersive interfaces (Scalable GUI) focused on user experience.",
         desc_vfx: "Particle systems and shaders for combat abilities.",
         desc_build: "Construction of detailed and optimized maps.",
-        
-        // Novos ou Corrigidos
+
         companies_title: "Trusted by / Worked with",
         title_projects: "Selected Projects",
         btn_demo: "View Live Demo",
@@ -56,8 +55,7 @@ const translations = {
         desc_ui: "Interfaces imersivas (Scalable GUI) focadas na experiência do usuário.",
         desc_vfx: "Sistemas de partículas e shaders para habilidades de combate.",
         desc_build: "Construção de mapas detalhados e otimizados.",
-        
-        // Novos ou Corrigidos
+
         companies_title: "Empresas que confiam / Trabalhei com",
         title_projects: "Projetos Selecionados",
         btn_demo: "Ver Demo",
@@ -81,7 +79,6 @@ const translations = {
 
 let currentLang = 'en';
 
-// Typewriter Effect
 const textElement = document.getElementById('typewriter');
 const phrases = {
     en: [
@@ -128,7 +125,7 @@ function type() {
     typewriterTimeout = setTimeout(type, typeSpeed);
 }
 
-// Language Switcher
+
 function setLanguage(lang) {
     currentLang = lang;
     const elements = document.querySelectorAll('[data-i18n]');
@@ -147,7 +144,6 @@ document.getElementById('lang-toggle').addEventListener('click', () => {
     setLanguage(currentLang === 'en' ? 'pt' : 'en');
 });
 
-// Theme Switcher
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 const icon = themeToggle.querySelector('i');
@@ -168,7 +164,6 @@ themeToggle.addEventListener('click', () => {
     }
 });
 
-// Tab Switcher
 window.openTab = function(tabName) {
     document.querySelectorAll('.skills-section').forEach(section => section.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -178,7 +173,6 @@ window.openTab = function(tabName) {
     if(targetBtn) targetBtn.classList.add('active');
 }
 
-// Performance Optimized Reveal on Scroll (Intersection Observer)
 const observerOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px"
@@ -243,7 +237,6 @@ document.getElementById('discord-form').addEventListener('submit', async functio
     }
 });
 
-// Init
 window.onload = () => {
     type();
 };
