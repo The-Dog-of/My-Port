@@ -1,6 +1,4 @@
-/* =========================================
-   1. VARIÁVEIS & TEMAS
-   ========================================= */
+
 :root {
     --bg: #050505;
     --surface: rgba(20, 20, 20, 0.6);
@@ -41,9 +39,6 @@ body.light-theme {
     transition: background-color 0.5s ease, border-color 0.5s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* =========================================
-   2. ESTRUTURA GERAL & FUNDO
-   ========================================= */
 body {
     margin: 0;
     background-color: var(--bg);
@@ -98,9 +93,6 @@ body {
 @keyframes auroraMove { 0% { transform: scale(1); } 100% { transform: scale(1.2) translate(-20px, 20px); } }
 @keyframes gridFloat { 0% { background-position: 0 0; } 100% { background-position: 0 50px; } }
 
-/* =========================================
-   3. HEADER & TOOLBAR
-   ========================================= */
 .toolbar {
     position: fixed;
     top: 20px; right: 20px;
@@ -199,7 +191,7 @@ h1 {
 
 @keyframes blink { 50% { border-color: transparent; } }
 
-/* Social Icons */
+
 .social-container {
     display: flex; gap: 15px; margin-top: 30px;
     flex-wrap: wrap; justify-content: center;
@@ -226,9 +218,6 @@ h1 {
     color: var(--discord-color);
 }
 
-/* =========================================
-   4. TABS & SKILLS
-   ========================================= */
 .tabs-container {
     margin-top: 60px; margin-bottom: 40px;
     display: flex; justify-content: center; gap: 20px;
@@ -292,9 +281,6 @@ h1 {
 #roblox .skill-hours { color: var(--roblox-color); }
 .skill-details { font-size: 0.85rem; color: var(--text-sec); line-height: 1.5; }
 
-/* =========================================
-   5. NOVO: CARROSSEL DE EMPRESAS
-   ========================================= */
 .companies-section {
     margin: 80px 0;
     text-align: center;
@@ -346,7 +332,6 @@ h1 {
     transform: scale(1.1);
 }
 
-/* Para a animação ao passar o mouse (opcional) */
 .carousel-track:hover {
     animation-play-state: paused;
 }
@@ -354,12 +339,8 @@ h1 {
 @keyframes scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); } 
-    /* Move -50% porque o conteúdo é duplicado */
 }
 
-/* =========================================
-   6. PROJETOS
-   ========================================= */
 .section-title {
     font-size: 2rem; margin: 100px 0 40px;
     font-weight: 700;
@@ -409,9 +390,6 @@ h1 {
 }
 .btn-project:hover { padding-left: 10px; }
 
-/* =========================================
-   7. CONTACT & FOOTER
-   ========================================= */
 #contact-area { margin-top: 120px; padding: 0 10px; display: flex; justify-content: center; }
 
 .glass-container {
@@ -493,7 +471,6 @@ footer {
 .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-/* RESPONSIVIDADE */
 @media (max-width: 768px) {
     h1 { font-size: 2.8rem; }
     .tabs-container { flex-direction: column; }

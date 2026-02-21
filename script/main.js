@@ -32,6 +32,7 @@ const translations = {
         proj_curso: "Sales landing page for client acquisition.",
         proj_store: "Website for a virtual store with payment integration.",
         proj_dog: "Application consuming The Dog API.",
+        proj_doguin: "Professional portfolio for a Community Moderator.",
 
         contact_title: "Get in Touch",
         contact_sub: "Have an idea? Send me a direct message.",
@@ -69,6 +70,7 @@ const translations = {
         proj_curso: "Página de vendas para captação de clientes.",
         proj_store: "Loja virtual com integração de pagamentos.",
         proj_dog: "Aplicação consumindo The Dog API.",
+        proj_doguin: "Portfólio profissional para Moderador.",
 
         contact_title: "Entre em Contato",
         contact_sub: "Tem uma ideia? Me mande uma mensagem direta.",
