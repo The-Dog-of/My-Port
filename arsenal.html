@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Arsenal | UI/UX & VFX Laboratory</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+    <div class="custom-cursor"></div>
+    <div class="cursor-glow"></div>
+
+    <div class="bg-wrapper">
+        <div class="aurora"></div>
+        <div class="noise-overlay"></div>
+        <div class="grid-lines"></div>
+    </div>
+
+    <nav class="floating-nav fade-in">
+        <div class="nav-content">
+            <a href="index.html#home" class="nav-item" aria-label="Home"><i class="fas fa-home"></i></a>
+            <a href="index.html#skills" class="nav-item" aria-label="Skills"><i class="fas fa-layer-group"></i></a>
+            <a href="projects.html" class="nav-item" aria-label="Projects"><i class="fas fa-folder-open"></i></a>
+            <a href="arsenal.html" class="nav-item special" style="border-color: var(--accent); color: var(--accent); box-shadow: 0 0 15px var(--accent-glow);" aria-label="Arsenal"><i class="fas fa-flask"></i> <span>Arsenal</span></a>
+            <div class="nav-separator"></div>
+            <button id="theme-toggle" class="nav-tool" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+            <button id="lang-toggle" class="nav-tool" aria-label="Switch Language"><span class="lang-text">EN</span></button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="reveal" style="margin-top: 150px; text-align: center; margin-bottom: 60px;">
+            <div class="academic-badge" style="margin-bottom: 20px; text-transform: uppercase;">
+                <i class="fas fa-vial"></i> Experimental Area
+            </div>
+            <h1 class="glitch-text">The Arsenal</h1>
+            <p style="color: var(--text-sec); font-size: 1.1rem; margin-top: 15px;">A curated collection of UI components, micro-interactions, and visual effects.</p>
+        </header>
+
+        <section class="reveal">
+            <div class="tabs-container" style="flex-wrap: wrap; justify-content: flex-start;">
+                <button class="tab-btn active arsenal-tab-btn" data-target="cursors-tab">
+                    <i class="fas fa-mouse-pointer"></i> Cursors
+                </button>
+                <button class="tab-btn arsenal-tab-btn" data-target="buttons-tab">
+                    <i class="fas fa-toggle-on"></i> Buttons
+                </button>
+                <button class="tab-btn arsenal-tab-btn" data-target="cards-tab">
+                    <i class="fas fa-clone"></i> Cards
+                </button>
+                <button class="tab-btn arsenal-tab-btn" data-target="typo-tab">
+                    <i class="fas fa-font"></i> Typography
+                </button>
+                <button class="tab-btn arsenal-tab-btn" data-target="fx-tab">
+                    <i class="fas fa-magic"></i> FX Lab
+                </button>
+                <button class="tab-btn arsenal-tab-btn" data-target="logic-tab">
+                    <i class="fas fa-brain"></i> Logic Components
+                </button>
+            </div>
+
+            <div id="cursors-tab" class="skills-tab-content active arsenal-content">
+                <div class="projects-grid">
+                    <div class="bento-item tilt-effect cursor-selector" data-cursor="core" style="cursor: pointer; padding: 30px; align-items: center; text-align: center;">
+                        <i class="fas fa-circle" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px; filter: drop-shadow(0 0 10px var(--accent));"></i>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Glow Core</h3>
+                        <p style="color: var(--text-sec); font-size: 0.85rem;">Default point with soft aura.</p>
+                    </div>
+                    
+                    <div class="bento-item tilt-effect cursor-selector" data-cursor="spotlight" style="cursor: pointer; padding: 30px; align-items: center; text-align: center;">
+                        <i class="fas fa-bullseye" style="font-size: 2rem; color: #fff; margin-bottom: 15px; opacity: 0.8;"></i>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Spotlight</h3>
+                        <p style="color: var(--text-sec); font-size: 0.85rem;">Flashlight revealing hidden layers.</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect cursor-selector" data-cursor="minimal" style="cursor: pointer; padding: 30px; align-items: center; text-align: center;">
+                        <i class="fas fa-dot-circle" style="font-size: 2rem; color: var(--text-sec); margin-bottom: 15px;"></i>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Minimal Dot</h3>
+                        <p style="color: var(--text-sec); font-size: 0.85rem;">High precision tiny point.</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect cursor-selector" data-cursor="hollow" style="cursor: pointer; padding: 30px; align-items: center; text-align: center;">
+                        <i class="far fa-circle" style="font-size: 2rem; color: #4cc9f0; margin-bottom: 15px;"></i>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Hollow Ring</h3>
+                        <p style="color: var(--text-sec); font-size: 0.85rem;">Expanding empty circle on click.</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect cursor-selector" data-cursor="crosshair" style="cursor: pointer; padding: 30px; align-items: center; text-align: center;">
+                        <i class="fas fa-crosshairs" style="font-size: 2rem; color: var(--roblox-color); margin-bottom: 15px;"></i>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Cyber Crosshair</h3>
+                        <p style="color: var(--text-sec); font-size: 0.85rem;">Roblox/FPS style tactical aim.</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect cursor-selector" data-cursor="inverter" style="cursor: pointer; padding: 30px; align-items: center; text-align: center;">
+                        <i class="fas fa-adjust" style="font-size: 2rem; color: #fff; margin-bottom: 15px;"></i>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Inverter</h3>
+                        <p style="color: var(--text-sec); font-size: 0.85rem;">Color difference blending mode.</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect cursor-selector" data-cursor="trailing" style="cursor: pointer; padding: 30px; align-items: center; text-align: center;">
+                        <i class="fas fa-meteor" style="font-size: 2rem; color: #fca311; margin-bottom: 15px;"></i>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Trailing Particles</h3>
+                        <p style="color: var(--text-sec); font-size: 0.85rem;">Leaves a soft dissipating trail.</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect cursor-selector" data-cursor="bubble" style="cursor: pointer; padding: 30px; align-items: center; text-align: center;">
+                        <i class="fas fa-comment-alt" style="font-size: 2rem; color: #48cae4; margin-bottom: 15px;"></i>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Text Bubble</h3>
+                        <p style="color: var(--text-sec); font-size: 0.85rem;">Floating text tooltip on hover.</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect cursor-selector" data-cursor="magnetic" style="cursor: pointer; padding: 30px; align-items: center; text-align: center;">
+                        <i class="fas fa-magnet" style="font-size: 2rem; color: #ff006e; margin-bottom: 15px;"></i>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Magnetic Orb</h3>
+                        <p style="color: var(--text-sec); font-size: 0.85rem;">Snaps physically to buttons.</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect cursor-selector" data-cursor="glitch" style="cursor: pointer; padding: 30px; align-items: center; text-align: center;">
+                        <i class="fas fa-bolt" style="font-size: 2rem; color: #39ff14; margin-bottom: 15px;"></i>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Glitch Cursor</h3>
+                        <p style="color: var(--text-sec); font-size: 0.85rem;">RGB split and jittering.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="buttons-tab" class="skills-tab-content arsenal-content">
+                <div class="projects-grid">
+                    <div class="bento-item tilt-effect" style="align-items: center; padding: 40px 20px;">
+                        <button class="submit-btn" style="width: 100%;">Primary Glow</button>
+                        <p style="color: var(--text-sec); font-size: 0.8rem; margin-top: 15px; font-family: var(--font-code);">.submit-btn</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect" style="align-items: center; padding: 40px 20px;">
+                        <a href="#" class="btn-project" style="width: 100%; justify-content: center;">Outline Hover</a>
+                        <p style="color: var(--text-sec); font-size: 0.8rem; margin-top: 15px; font-family: var(--font-code);">.btn-project</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect" style="align-items: center; padding: 40px 20px;">
+                        <button class="tab-btn active" style="width: 100%; box-shadow: 0 0 20px var(--roblox-color); background: var(--roblox-color); color: #fff; border: none;">Roblox Action</button>
+                        <p style="color: var(--text-sec); font-size: 0.8rem; margin-top: 15px; font-family: var(--font-code);">Roblox Style</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect" style="align-items: center; padding: 40px 20px;">
+                        <button style="width: 100%; padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: var(--text-main); font-weight: 700; backdrop-filter: blur(10px); transition: 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.1)';" onmouseout="this.style.background='rgba(255,255,255,0.05)';">Glass Press</button>
+                        <p style="color: var(--text-sec); font-size: 0.8rem; margin-top: 15px; font-family: var(--font-code);">Glassmorphic</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect" style="align-items: center; padding: 40px 20px;">
+                        <button class="submit-btn magnetic-btn" style="width: 100%; background: #fff; color: #000; box-shadow: 0 10px 30px rgba(255,255,255,0.2);">Magnetic Pull</button>
+                        <p style="color: var(--text-sec); font-size: 0.8rem; margin-top: 15px; font-family: var(--font-code);">Gravity Effect</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect" style="align-items: center; padding: 40px 20px;">
+                        <button class="submit-btn" style="width: 100%; background: #1a1a1a; border: 1px solid #333; animation: neonPulse 2s infinite alternate;">Neon Pulse</button>
+                        <p style="color: var(--text-sec); font-size: 0.8rem; margin-top: 15px; font-family: var(--font-code);">Pulsing Shadow</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect" style="align-items: center; padding: 40px 20px;">
+                        <button style="width: 100%; padding: 15px; background: #fff; border: 2px solid #fff; border-radius: 12px; color: #000; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; position: relative; overflow: hidden;" onmouseover="this.style.color='#fff';" onmouseout="this.style.color='#000';">Liquid Fill <span style="position: absolute; bottom: -100%; left: 0; width: 100%; height: 100%; background: var(--accent); border-radius: 50%; z-index: -1; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);"></span></button>
+                        <p style="color: var(--text-sec); font-size: 0.8rem; margin-top: 15px; font-family: var(--font-code);">Liquid Effect</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect" style="align-items: center; padding: 40px 20px;">
+                        <button style="width: 100%; padding: 15px; background: transparent; border: 2px solid #39ff14; color: #39ff14; font-family: var(--font-code); font-weight: bold; text-transform: uppercase; text-shadow: 0 0 5px #39ff14; transition: 0.2s;" onmouseover="this.style.background='#39ff14'; this.style.color='#000';" onmouseout="this.style.background='transparent'; this.style.color='#39ff14';">System.Run()</button>
+                        <p style="color: var(--text-sec); font-size: 0.8rem; margin-top: 15px; font-family: var(--font-code);">Cyberpunk Terminal</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cards-tab" class="skills-tab-content arsenal-content">
+                <div class="projects-grid">
+                    <div class="bento-item tilt-effect" style="min-height: 250px;">
+                        <div style="position: absolute; top: 20px; right: 20px; color: var(--accent);"><i class="fas fa-layer-group fa-2x"></i></div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Bento Box</h3>
+                        <p style="color: var(--text-sec); font-size: 0.95rem; line-height: 1.6;">Modern container with inner gradient borders and soft shadows.</p>
+                    </div>
+
+                    <div class="glass-container tilt-effect" style="display: flex; flex-direction: column; padding: 40px; grid-template-columns: 1fr; min-height: 250px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Glassmorphism</h3>
+                        <p style="color: var(--text-sec); font-size: 0.95rem; line-height: 1.6;">Heavy blur blending with Aurora and noise overlays.</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect" style="min-height: 250px; background: linear-gradient(135deg, rgba(20,20,20,0.8), rgba(40,40,40,0.9)); border: 1px solid #333; box-shadow: 10px 10px 20px rgba(0,0,0,0.5), -5px -5px 15px rgba(255,255,255,0.02);">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #fff;">Neumorphic Dark</h3>
+                        <p style="color: var(--text-sec); font-size: 0.95rem; line-height: 1.6;">Extruded physical element effect mimicking hardware surfaces.</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect holographic-card" style="min-height: 350px; grid-column: 1 / -1; align-items: center; justify-content: center; position: relative;">
+                        <div class="holographic-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, transparent, rgba(255,255,255,0.2) 20%, transparent 40%, rgba(0,112,243,0.1) 60%, transparent 80%); mix-blend-mode: color-dodge; transition: opacity 0.3s; opacity: 0; border-radius: 32px; z-index: 1;"></div>
+                        <i class="fas fa-magic" style="font-size: 3rem; color: #fff; text-shadow: 0 0 20px var(--accent); margin-bottom: 20px;"></i>
+                        <h3 style="font-size: 2rem; color: #fff; margin-bottom: 10px;">Holographic TCG Card</h3>
+                        <p style="color: var(--text-sec); font-size: 1.1rem; line-height: 1.6; max-width: 60%; text-align: center;">Holographic effect reflecting light based on mouse position. Perfect for specialized game design portfolios.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="typo-tab" class="skills-tab-content arsenal-content">
+                <div class="bento-item tilt-effect" style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <h1 class="glitch-text" style="font-size: 2.5rem;">Glitch Title</h1>
+                        <div class="typewriter-container" style="font-size: 1.2rem; margin-top: 10px;">
+                            <span style="border-right: 3px solid var(--accent); padding-right: 5px; animation: blink 0.75s step-end infinite; background: linear-gradient(to right, var(--text-main), var(--accent)); -webkit-background-clip: text; color: transparent;">Typewriter Effect_</span>
+                        </div>
+                        <div class="masked-image-text" style="margin-top: 30px; font-size: 3rem; font-weight: 900; -webkit-text-stroke: 1px var(--text-main); color: transparent; background: url('assets/partners/roblox_pattern.png'); background-clip: text; -webkit-background-clip: text; font-family: var(--font-main); text-transform: uppercase;">Image Masked Text</div>
+                    </div>
+
+                    <div style="flex: 1; min-width: 250px;">
+                        <h3 style="margin-bottom: 20px; color: var(--text-sec);">Tags & Badges</h3>
+                        <div class="tags-row">
+                            <span class="tag web">Frontend</span>
+                            <span class="tag web">Backend</span>
+                            <span class="tag studio">Game Design</span>
+                            <span class="tag mod">Community</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="fx-tab" class="skills-tab-content arsenal-content FX-Lab">
+                <div class="projects-grid">
+                    <div class="bento-item tilt-effect Dynamic-Lighting" style="min-height: 250px; background: rgba(5,5,5,0.9); border: 2px solid #222; align-items: center; justify-content: center; position: relative;">
+                        <div class="light-source" style="position: absolute; top: 50%; left: 50%; width: 5px; height: 5px; background: #fff; border-radius: 50%; box-shadow: 0 0 100px 50px rgba(255,255,255,0.2); transform: translate(-50%, -50%); transition: all 0.1s; z-index: 1;"></div>
+                        <div class="Fx-Title" style="font-size: 1.5rem; font-weight: 800; color: #fff; z-index: 2;">Dynamic Lighting</div>
+                        <p style="color: var(--text-sec); font-size: 0.9rem; margin-top: 10px; z-index: 2;">Dark section with light following the mouse.</p>
+                    </div>
+
+                    <div class="bento-item tilt-effect Vfx-Shatter" style="min-height: 250px; background: var(--bg); border: 2px solid #333; align-items: center; justify-content: center;">
+                        <div class="Shatter-Title" style="font-size: 2rem; font-weight: 900; color: transparent; -webkit-text-stroke: 1px #444; text-transform: uppercase; transition: transform 0.3s; position: relative;">FX BURST <span class="shatter-piece" style="position: absolute; top: -20px; left: -10px; opacity: 0; transform: scale(0.5);">💥</span></div>
+                    </div>
+
+                    <div class="bento-item tilt-effect" style="min-height: 250px; align-items: center; justify-content: center; position: relative;">
+                        <canvas id="fluid-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; border-radius: 32px;"></canvas>
+                        <h3 style="color: #fff; text-shadow: 0 0 20px #fff; z-index: 1;">Fluid Physics</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div id="logic-tab" class="skills-tab-content arsenal-content Logic-Lab">
+                <div class="projects-grid">
+                    <div class="bento-item tilt-effect Terminal-Console" style="grid-column: 1 / -1; background: #010101; border: 1px solid #111; font-family: var(--font-code); color: #39ff14; padding: 20px; font-size: 0.9rem; min-height: 200px; display: flex; flex-direction: column-reverse;">
+                        <div class="terminal-body" style="overflow: hidden; max-height: 160px;"></div
+                        ><div class="terminal-prefix" style="color: var(--text-sec); margin-top: auto;">SecureShell@Richard-Portfolio v2.0 <span style="display: inline-block; width: 3px; height: 1.2em; background-color: #39ff14; vertical-align: middle; animation: blink 0.75s step-end infinite; margin-left: 5px;"></span></div>
+                    </div>
+
+                    <div class="bento-item tilt-effect Neumorphic-Toggles" style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 20px; align-items: center;">
+                        <h3 style="color: var(--text-sec);">Cyber Toggle</h3>
+                        <label class="cyber-switch" style="position: relative; display: inline-block; width: 60px; height: 34px;"><input type="checkbox" style="opacity: 0; width: 0; height: 0;"><span class="cyber-slider" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #333; transition: 0.4s; border-radius: 34px; border: 1px solid #444;"></span></label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer reveal">
+            <div class="footer-content">
+                <p>© 2026 Richard Souza. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="projects.html">Projects</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script/main.js"></script>
+</body>
+</html>

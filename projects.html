@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects | Richard Souza</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+    <div class="custom-cursor"></div>
+    <div class="cursor-glow"></div>
+
+    <div class="bg-wrapper">
+        <div class="aurora"></div>
+        <div class="noise-overlay"></div>
+        <div class="grid-lines"></div>
+    </div>
+
+    <nav class="floating-nav fade-in">
+        <div class="nav-content">
+            <a href="index.html#home" class="nav-item" aria-label="Home"><i class="fas fa-home"></i></a>
+            <a href="index.html#skills" class="nav-item" aria-label="Skills"><i class="fas fa-layer-group"></i></a>
+            <a href="projects.html" class="nav-item" style="color: var(--text-main); background: var(--surface-hover);" aria-label="Projects"><i class="fas fa-folder-open"></i></a>
+            <a href="arsenal.html" class="nav-item special" aria-label="Arsenal"><i class="fas fa-flask"></i> <span>Arsenal</span></a>
+            <div class="nav-separator"></div>
+            <button id="theme-toggle" class="nav-tool" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+            <button id="lang-toggle" class="nav-tool" aria-label="Switch Language"><span class="lang-text">EN</span></button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="reveal" style="margin-top: 150px; text-align: center; margin-bottom: 60px;">
+            <h1 class="glitch-text" data-i18n="title_projects">All Projects</h1>
+            <p style="color: var(--text-sec); font-size: 1.1rem; margin-top: 15px;" data-i18n="subtitle_projects">An archive of my work across Web Development and Game Studios.</p>
+        </header>
+
+        <section class="projects-section">
+            <div class="section-header reveal" style="display: flex; flex-direction: column; align-items: center; gap: 25px; margin-bottom: 50px;">
+                
+                <div class="search-container" style="width: 100%; max-width: 600px; position: relative;">
+                    <i class="fas fa-search" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--text-sec);"></i>
+                    <input type="text" id="project-search" placeholder="Search technologies, names or niches..." autocomplete="off" style="width: 100%; padding: 18px 20px 18px 50px; border-radius: 30px; border: 1px solid var(--border); background: var(--surface); color: var(--text-main); font-family: var(--font-main); font-size: 1rem; backdrop-filter: blur(10px); outline: none; transition: box-shadow 0.3s, border-color 0.3s;" onfocus="this.style.borderColor='var(--accent)'; this.style.boxShadow='0 0 15px var(--accent-glow)';" onblur="this.style.borderColor='var(--border)'; this.style.boxShadow='none';">
+                </div>
+
+                <div class="filter-bar" style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+                    <button class="tab-btn active filter-btn" data-filter="all" data-i18n="filter_all">All</button>
+                    <button class="tab-btn filter-btn" data-filter="studios" data-i18n="filter_studios">Studios</button>
+                    <button class="tab-btn filter-btn" data-filter="websites" data-i18n="filter_websites">Websites</button>
+                    <button class="tab-btn filter-btn" data-filter="moderator" data-i18n="filter_mod">Moderator</button>
+                </div>
+                
+                <p id="results-count" style="color: var(--accent); font-family: var(--font-code); font-weight: 700; font-size: 0.9rem; margin-top: 10px;">Showing 9 results</p>
+            </div>
+            
+            <div class="projects-grid reveal" id="projects-gallery">
+                <div class="project-card tilt-effect" data-category="websites">
+                    <div class="img-wrapper">
+                        <div class="project-img" style="background-image: url('assets/portifolio/port-dkz.png');"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="tags-row"><span class="tag web">HTML</span><span class="tag web">JS</span><span class="tag web">CSS</span></div>
+                        <h3 class="project-title">DKZ Developer Port</h3>
+                        <p class="project-desc" data-i18n="proj_dkz">Professional site for a high-profile game developer.</p>
+                        <a href="https://www.dkzdev.com" target="_blank" class="btn-project" data-i18n="btn_code">View Case <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card tilt-effect" data-category="studios">
+                    <div class="img-wrapper">
+                        <div class="project-img" style="background-image: url('assets/studios/studio-eclipse.png');"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="tags-row"><span class="tag studio">HTML</span><span class="tag studio">CSS</span></div>
+                        <h3 class="project-title">Studio Website</h3>
+                        <p class="project-desc" data-i18n="proj_eclipse">Professional site for a moderation studio.</p>
+                        <a href="https://eclipse-ten-beta.vercel.app" target="_blank" class="btn-project" data-i18n="btn_code">View Case <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card tilt-effect" data-category="moderator">
+                    <div class="img-wrapper">
+                        <div class="project-img" style="background-image: url('assets/portifolio/port-infi.png');"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="tags-row"><span class="tag mod">HTML</span><span class="tag mod">JS</span><span class="tag mod">CSS</span></div>
+                        <h3 class="project-title">Moderator Portfolio</h3>
+                        <p class="project-desc" data-i18n="proj_infi">Professional portfolio for a Community Moderator.</p>
+                        <a href="https://infi-port.vercel.app" target="_blank" class="btn-project" data-i18n="btn_code">View Case <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card tilt-effect" data-category="websites">
+                    <div class="img-wrapper">
+                        <div class="project-img" style="background-image: url('assets/portifolio/port-pag.png');"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="tags-row"><span class="tag web">HTML</span><span class="tag web">JS</span><span class="tag web">CSS</span></div>
+                        <h3 class="project-title">Payment Integration</h3>
+                        <p class="project-desc" data-i18n="proj_pag">Payment gateway integration showcase.</p>
+                        <a href="https://pag-porti.vercel.app" target="_blank" class="btn-project" data-i18n="btn_code">View Case <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card tilt-effect" data-category="studios">
+                    <div class="img-wrapper">
+                        <div class="project-img" style="background-image: url('assets/studios/studio-model.png');"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="tags-row"><span class="tag studio">HTML</span><span class="tag studio">JS</span><span class="tag studio">CSS</span></div>
+                        <h3 class="project-title">Game Studio Hub</h3>
+                        <p class="project-desc" data-i18n="proj_studio">Professional template for Game Studios.</p>
+                        <a href="https://model-studio-for-games.vercel.app" target="_blank" class="btn-project" data-i18n="btn_code">View Case <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card tilt-effect" data-category="moderator">
+                    <div class="img-wrapper">
+                        <div class="project-img" style="background-image: url('assets/portifolio/port-doguin.png');"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="tags-row"><span class="tag mod">HTML</span><span class="tag mod">JS</span><span class="tag mod">CSS</span></div>
+                        <h3 class="project-title">Portfolio For Moderator</h3>
+                        <p class="project-desc" data-i18n="proj_doguin">A professional portfolio for a Community Moderator.</p>
+                        <a href="https://doguin.vercel.app" target="_blank" class="btn-project" data-i18n="btn_code">View Case <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card tilt-effect" data-category="websites">
+                    <div class="img-wrapper">
+                        <div class="project-img" style="background-image: url('assets/projects/curso.png');"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="tags-row"><span class="tag web">HTML</span><span class="tag web">JS</span><span class="tag web">CSS</span></div>
+                        <h3 class="project-title">Course Landing Page</h3>
+                        <p class="project-desc" data-i18n="proj_curso">Sales landing page for client acquisition.</p>
+                        <a href="https://painel-de-venda.vercel.app" target="_blank" class="btn-project" data-i18n="btn_code">View Case <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card tilt-effect" data-category="websites">
+                    <div class="img-wrapper">
+                        <div class="project-img" style="background-image: url('assets/projects/store.png');"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="tags-row"><span class="tag web">HTML</span><span class="tag web">JS</span><span class="tag web">CSS</span></div>
+                        <h3 class="project-title">Virtual Store</h3>
+                        <p class="project-desc" data-i18n="proj_store">E-commerce website with cart logic.</p>
+                        <a href="https://p-gina-de-vendas.vercel.app" target="_blank" class="btn-project" data-i18n="btn_code">View Case <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card tilt-effect" data-category="websites">
+                    <div class="img-wrapper">
+                        <div class="project-img" style="background-image: url('assets/projects/TheDog.png');"></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="tags-row"><span class="tag web">HTML</span><span class="tag web">JS</span><span class="tag web">CSS</span></div>
+                        <h3 class="project-title">The Dog API</h3>
+                        <p class="project-desc" data-i18n="proj_dog">Application consuming The Dog API.</p>
+                        <a href="#" target="_blank" class="btn-project" data-i18n="btn_code">View Case <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer reveal">
+            <div class="footer-content">
+                <p>© 2026 Richard Souza. <span data-i18n="footer">All Rights Reserved.</span></p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="arsenal.html">The Arsenal</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script/main.js"></script>
+</body>
+</html>
