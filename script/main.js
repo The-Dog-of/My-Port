@@ -1,5 +1,4 @@
 const apiURL = "/api/send";
-
 const translations = {
     en: {
         academic: "Systems Analysis & Dev • 4th Semester",
@@ -157,7 +156,7 @@ function typeBio() {
     let typeSpeed = bioIsDeleting ? 30 : 60;
     if (!bioIsDeleting && bioCharIndex === currentPhrase.length) {
         bioIsDeleting = true;
-        typeSpeed = 2500; 
+        typeSpeed = 2500;
     } else if (bioIsDeleting && bioCharIndex === 0) {
         bioIsDeleting = false;
         bioIndex++;
@@ -247,7 +246,6 @@ const observerOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px"
 };
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -255,7 +253,6 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, observerOptions);
-
 document.querySelectorAll(".reveal, .fade-in").forEach((el) => observer.observe(el));
 
 const filterBtns = document.querySelectorAll('.filter-btn');
@@ -361,16 +358,30 @@ if (discordForm) {
 
 const cursor = document.querySelector('.custom-cursor');
 const cursorGlow = document.querySelector('.cursor-glow');
+let mouseX = 0;
+let mouseY = 0;
+let isMoving = false;
 
 if (cursor && cursorGlow) {
     document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        cursorGlow.animate({
-            left: `${e.clientX}px`,
-            top: `${e.clientY}px`
-        }, { duration: 500, fill: "forwards" });
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (!isMoving) {
+            isMoving = true;
+            requestAnimationFrame(updateCursor);
+        }
     });
+
+    function updateCursor() {
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+        cursorGlow.animate({
+            left: `${mouseX}px`,
+            top: `${mouseY}px`
+        }, { duration: 300, fill: "forwards" });
+        isMoving = false;
+    }
+
     const addHoverEffect = () => {
         const hoverElements = document.querySelectorAll('a, button, .bento-item, .skill-card, .project-card, input, textarea, .cursor-selector, .magnetic-btn, .holographic-card');
         hoverElements.forEach(el => {
@@ -416,9 +427,9 @@ tiltElements.forEach(el => {
         const y = e.clientY - rect.top;
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -8;
-        const rotateY = ((x - centerX) / centerX) * 8;
-        el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        const rotateX = ((y - centerY) / centerY) * -5;
+        const rotateY = ((x - centerX) / centerX) * 5;
+        el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
     });
     el.addEventListener('mouseleave', () => {
         if (el.classList.contains('magnetic-btn')) return;
@@ -432,7 +443,7 @@ magneticBtns.forEach(btn => {
         const rect = btn.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
-        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
     });
     btn.addEventListener('mouseleave', () => {
         btn.style.transform = 'translate(0px, 0px)';
