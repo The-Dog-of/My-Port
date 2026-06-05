@@ -6,13 +6,13 @@
     <title>The Arsenal | UI/UX & VFX Laboratory</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
 
-    <div class="custom-cursor"></div>
-    <div class="cursor-glow"></div>
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
 
     <div class="bg-wrapper">
         <div class="aurora"></div>
@@ -22,7 +22,7 @@
 
     <nav class="floating-nav fade-in">
         <div class="nav-content">
-            <a href="index.html#home" class="nav-item" aria-label="Home"><i class="fas fa-home"></i></a>
+            <a href="index.html#home" class="nav-item" aria-label="Home" data-tooltip="Home"><i class="fas fa-terminal"></i></a>
             <a href="index.html#skills" class="nav-item" aria-label="Skills"><i class="fas fa-layer-group"></i></a>
             <a href="projects.html" class="nav-item" aria-label="Projects"><i class="fas fa-folder-open"></i></a>
             <a href="arsenal.html" class="nav-item special" style="border-color: var(--accent); color: var(--accent); box-shadow: 0 0 15px var(--accent-glow);" aria-label="Arsenal"><i class="fas fa-flask"></i> <span>Arsenal</span></a>

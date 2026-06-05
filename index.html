@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richard Souza | Software Engineer & Game Developer</title>
-    <meta name="description" content="Portfolio of Richard Souza. Bridging Robust Software Engineering (Backend/Database) and Interactive Creativity (Game Dev on Roblox).">
-    <meta property="og:title" content="Richard Souza | Software Engineer">
-    <meta property="og:description" content="I transform coffee into clean, scalable code. Explore my web systems and immersive Roblox games.">
-    <meta property="og:image" content="assets/banner.png">
+    <title>Richard Souza | Engineer & Hacker</title>
+    <meta name="description" content="Richard Souza — Software Engineer, Game Developer & Cybersecurity enthusiast. Building robust systems and breaking them for fun.">
+    <meta property="og:title" content="Richard Souza | Engineer & Hacker">
+    <meta property="og:description" content="Software Engineering, Game Dev & Cybersecurity. Clean code by day, CTF challenges by night.">
+    <meta property="og:image" content="assets/profile.gif">
     <meta property="og:url" content="https://richardsouza.dev">
     <meta property="og:type" content="website">
-    <meta name="theme-color" content="#0070f3">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="theme-color" content="#00ff88">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
 
-    <div class="custom-cursor"></div>
-    <div class="cursor-glow"></div>
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <canvas id="matrix-canvas"></canvas>
 
     <div class="bg-wrapper">
         <div class="aurora"></div>
@@ -27,13 +31,14 @@
         <div class="grid-lines"></div>
     </div>
 
-    <nav class="floating-nav fade-in">
+    <nav class="floating-nav" id="nav">
         <div class="nav-content">
-            <a href="#home" class="nav-item active" aria-label="Home"><i class="fas fa-home"></i></a>
-            <a href="#skills" class="nav-item" aria-label="Skills"><i class="fas fa-layer-group"></i></a>
-            <a href="#featured-projects" class="nav-item" aria-label="Projects"><i class="fas fa-star"></i></a>
-            <a href="projects.html" class="nav-item" aria-label="All Projects"><i class="fas fa-folder-open"></i></a>
-            <a href="arsenal.html" class="nav-item special" aria-label="Arsenal"><i class="fas fa-flask"></i> <span>Arsenal</span></a>
+            <a href="#home" class="nav-item active" aria-label="Home" data-tooltip="Home"><i class="fas fa-terminal"></i></a>
+            <a href="#skills" class="nav-item" aria-label="Skills" data-tooltip="Skills"><i class="fas fa-layer-group"></i></a>
+            <a href="#security" class="nav-item" aria-label="Security" data-tooltip="Cyber"><i class="fas fa-shield-halved"></i></a>
+            <a href="#featured-projects" class="nav-item" aria-label="Projects" data-tooltip="Projects"><i class="fas fa-star"></i></a>
+            <a href="projects.html" class="nav-item" aria-label="All Projects" data-tooltip="Archive"><i class="fas fa-folder-open"></i></a>
+            <a href="arsenal.html" class="nav-item special" aria-label="Arsenal" data-tooltip="Arsenal"><i class="fas fa-flask"></i> <span>Arsenal</span></a>
             <div class="nav-separator"></div>
             <button id="theme-toggle" class="nav-tool" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
             <button id="lang-toggle" class="nav-tool" aria-label="Switch Language"><span class="lang-text">EN</span></button>
@@ -41,26 +46,32 @@
     </nav>
 
     <main class="container">
+
+        <!-- HERO -->
         <header id="home" class="hero-bento reveal">
             <div class="bento-item profile-box tilt-effect">
                 <div class="profile-wrapper">
+                    <div class="profile-scan-line"></div>
                     <img src="assets/profile.gif" alt="Richard Souza" class="profile-pic" loading="lazy">
+                    <div class="profile-ring"></div>
                 </div>
                 <div class="academic-badge">
-                    <i class="fas fa-graduation-cap"></i> 
+                    <i class="fas fa-graduation-cap"></i>
                     <span data-i18n="academic">Systems Analysis & Dev • 4th Semester</span>
                 </div>
             </div>
 
             <div class="bento-item intro-box tilt-effect">
-                <h1 class="glitch-text"><span id="name-typewriter"></span><span class="cursor-blink"></span></h1>
+                <div class="intro-eyebrow"><span class="blinking-dot"></span> <span data-i18n="eyebrow">ENGINEER / HACKER / CREATOR</span></div>
+                <h1 class="hero-name"><span id="name-typewriter"></span><span class="cursor-blink">_</span></h1>
                 <div class="typewriter-container">
                     <span id="typewriter"></span>
                 </div>
                 <div class="about-me">
                     <p data-i18n="about">
-                        I transform coffee into clean, scalable code. My passion lies at the intersection between 
-                        <strong>Robust Software Engineering</strong> and <strong>Interactive Creativity</strong>.
+                        I transform coffee into clean, scalable code. My passion lies at the intersection between
+                        <strong>Robust Software Engineering</strong>, <strong>Interactive Creativity</strong> and
+                        <strong>Cybersecurity</strong>.
                     </p>
                 </div>
             </div>
@@ -68,20 +79,16 @@
             <div class="bento-item social-box tilt-effect">
                 <div class="social-links-grid">
                     <a href="https://www.linkedin.com/in/richard-souza-lelling-723558277" target="_blank" class="social-card-mini">
-                        <i class="fab fa-linkedin-in"></i>
-                        <span>LinkedIn</span>
+                        <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
                     </a>
                     <a href="https://github.com/RichardSouzaLlg" target="_blank" class="social-card-mini">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
+                        <i class="fab fa-github"></i><span>GitHub</span>
                     </a>
                     <a href="https://www.instagram.com/richard_souzallg" target="_blank" class="social-card-mini">
-                        <i class="fab fa-instagram"></i>
-                        <span>Instagram</span>
+                        <i class="fab fa-instagram"></i><span>Instagram</span>
                     </a>
                     <a href="#contact-area" class="social-card-mini discord">
-                        <i class="fab fa-discord"></i>
-                        <span data-i18n="btn_contact">Contact</span>
+                        <i class="fab fa-discord"></i><span data-i18n="btn_contact">Contact</span>
                     </a>
                 </div>
             </div>
@@ -90,17 +97,29 @@
                 <div class="status-content">
                     <span class="dot pulse"></span>
                     <span data-i18n="status">Available for Projects</span>
+                    <div class="status-metrics">
+                        <div class="metric"><span class="metric-val">3+</span><span class="metric-label" data-i18n="metric_years">Years</span></div>
+                        <div class="metric-divider"></div>
+                        <div class="metric"><span class="metric-val">12+</span><span class="metric-label" data-i18n="metric_projects">Projects</span></div>
+                        <div class="metric-divider"></div>
+                        <div class="metric"><span class="metric-val">2k+</span><span class="metric-label" data-i18n="metric_hours">Hours</span></div>
+                    </div>
                 </div>
             </div>
         </header>
 
+        <!-- SKILLS -->
         <section id="skills" class="skills-section reveal">
+            <div class="section-header-line">
+                <div class="section-label"><i class="fas fa-code"></i> <span data-i18n="skills_label">SKILL STACK</span></div>
+            </div>
+
             <div class="tabs-container">
                 <button class="tab-btn active" onclick="openTab('web')" data-target="web">
-                    <i class="fas fa-code"></i> Fullstack Web
+                    <i class="fas fa-globe"></i> Fullstack Web
                 </button>
                 <button class="tab-btn" onclick="openTab('roblox')" data-target="roblox">
-                    <i class="fas fa-gamepad"></i> Roblox Engineering
+                    <i class="fas fa-gamepad"></i> Roblox
                 </button>
             </div>
 
@@ -115,6 +134,7 @@
                             </div>
                         </div>
                         <p class="skill-details" data-i18n="desc_backend">SQL Server, PostgreSQL, Python (Flask) & C# (.NET Core).</p>
+                        <div class="skill-bar"><div class="skill-fill" style="--fill: 65%"></div></div>
                     </div>
                     <div class="skill-card tilt-effect">
                         <div class="skill-header">
@@ -125,6 +145,7 @@
                             </div>
                         </div>
                         <p class="skill-details" data-i18n="desc_js">ES6+, DOM Manipulation, HTML5/CSS3.</p>
+                        <div class="skill-bar"><div class="skill-fill" style="--fill: 92%"></div></div>
                     </div>
                     <div class="skill-card tilt-effect">
                         <div class="skill-header">
@@ -135,6 +156,7 @@
                             </div>
                         </div>
                         <p class="skill-details" data-i18n="desc_python">Discord Bots, scripts & basic Data Science.</p>
+                        <div class="skill-bar"><div class="skill-fill" style="--fill: 78%"></div></div>
                     </div>
                     <div class="skill-card tilt-effect">
                         <div class="skill-header">
@@ -145,6 +167,7 @@
                             </div>
                         </div>
                         <p class="skill-details" data-i18n="desc_csharp">Corporate applications & OOP logic.</p>
+                        <div class="skill-bar"><div class="skill-fill" style="--fill: 40%"></div></div>
                     </div>
                 </div>
             </div>
@@ -160,32 +183,118 @@
                             </div>
                         </div>
                         <p class="skill-details" data-i18n="desc_luau">Advanced OOP, Optimization & Anti-Cheat security.</p>
+                        <div class="skill-bar"><div class="skill-fill roblox-fill" style="--fill: 80%"></div></div>
                     </div>
                     <div class="skill-card tilt-effect">
                         <div class="skill-header">
                             <div class="skill-icon roblox-icon"><i class="fas fa-layer-group"></i></div>
-                            <div class="skill-name">UI/UX Designer</div>
+                            <div><div class="skill-name">UI/UX Designer</div></div>
                         </div>
                         <p class="skill-details" data-i18n="desc_ui">Immersive Scalable GUIs & User Experience.</p>
+                        <div class="skill-bar"><div class="skill-fill roblox-fill" style="--fill: 85%"></div></div>
                     </div>
                     <div class="skill-card tilt-effect">
                         <div class="skill-header">
                             <div class="skill-icon roblox-icon"><i class="fas fa-magic"></i></div>
-                            <div class="skill-name">VFX Artist</div>
+                            <div><div class="skill-name">VFX Artist</div></div>
                         </div>
                         <p class="skill-details" data-i18n="desc_vfx">Particle systems & shaders for combat abilities.</p>
+                        <div class="skill-bar"><div class="skill-fill roblox-fill" style="--fill: 75%"></div></div>
                     </div>
                     <div class="skill-card tilt-effect">
                         <div class="skill-header">
                             <div class="skill-icon roblox-icon"><i class="fas fa-cubes"></i></div>
-                            <div class="skill-name">Builder</div>
+                            <div><div class="skill-name">Builder</div></div>
                         </div>
                         <p class="skill-details" data-i18n="desc_build">Detailed & optimized map construction.</p>
+                        <div class="skill-bar"><div class="skill-fill roblox-fill" style="--fill: 70%"></div></div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- CYBERSECURITY SECTION (NEW) -->
+        <section id="security" class="cyber-section reveal">
+            <div class="cyber-header">
+                <div class="section-label cyber-label"><i class="fas fa-skull-crossbones"></i> <span data-i18n="cyber_label">CYBERSECURITY</span></div>
+                <div class="cyber-terminal-line">&gt; <span id="cyber-typing"></span><span class="cursor-blink">_</span></div>
+            </div>
+
+            <div class="cyber-grid">
+                <div class="cyber-card tilt-effect" data-glow="green">
+                    <div class="cyber-card-icon"><i class="fas fa-bug"></i></div>
+                    <div class="cyber-card-body">
+                        <h3 data-i18n="cyber_pentest">Penetration Testing</h3>
+                        <p data-i18n="cyber_pentest_desc">Web app testing, OWASP Top 10, vulnerability assessment and report writing.</p>
+                        <div class="cyber-tags">
+                            <span class="ctag">Burp Suite</span>
+                            <span class="ctag">OWASP</span>
+                            <span class="ctag">SQLi</span>
+                            <span class="ctag">XSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cyber-card tilt-effect" data-glow="blue">
+                    <div class="cyber-card-icon"><i class="fas fa-flag"></i></div>
+                    <div class="cyber-card-body">
+                        <h3 data-i18n="cyber_ctf">CTF Challenges</h3>
+                        <p data-i18n="cyber_ctf_desc">Active participation in Capture The Flag competitions covering Web, Crypto, Forensics and Reverse Engineering.</p>
+                        <div class="cyber-tags">
+                            <span class="ctag">HackTheBox</span>
+                            <span class="ctag">TryHackMe</span>
+                            <span class="ctag">Forensics</span>
+                            <span class="ctag">Crypto</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cyber-card tilt-effect" data-glow="red">
+                    <div class="cyber-card-icon"><i class="fas fa-network-wired"></i></div>
+                    <div class="cyber-card-body">
+                        <h3 data-i18n="cyber_recon">OSINT & Recon</h3>
+                        <p data-i18n="cyber_recon_desc">Open-source intelligence gathering, network reconnaissance and digital footprint analysis.</p>
+                        <div class="cyber-tags">
+                            <span class="ctag">Nmap</span>
+                            <span class="ctag">Shodan</span>
+                            <span class="ctag">Maltego</span>
+                            <span class="ctag">OSINT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cyber-card tilt-effect" data-glow="purple">
+                    <div class="cyber-card-icon"><i class="fas fa-shield-halved"></i></div>
+                    <div class="cyber-card-body">
+                        <h3 data-i18n="cyber_defense">Secure Development</h3>
+                        <p data-i18n="cyber_defense_desc">Writing secure code, implementing anti-cheat systems in games, and hardening web applications.</p>
+                        <div class="cyber-tags">
+                            <span class="ctag">Anti-Cheat</span>
+                            <span class="ctag">Auth Security</span>
+                            <span class="ctag">Encryption</span>
+                            <span class="ctag">CSRF</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal block -->
+            <div class="fake-terminal reveal">
+                <div class="terminal-topbar">
+                    <div class="terminal-dots">
+                        <span class="tdot red"></span>
+                        <span class="tdot yellow"></span>
+                        <span class="tdot green"></span>
+                    </div>
+                    <span class="terminal-title">richard@kali ~ — bash</span>
+                </div>
+                <div class="terminal-body" id="terminal-output">
+                    <!-- filled by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- PARTNERS -->
         <section class="partners-section reveal">
             <p class="section-tag" data-i18n="companies_title">Trusted by / Worked with</p>
             <div class="carousel-container">
@@ -204,57 +313,56 @@
             </div>
         </section>
 
+        <!-- FEATURED PROJECTS -->
         <section id="featured-projects" class="projects-section reveal">
             <div class="section-header">
                 <h2 class="section-title" data-i18n="title_featured">Featured Projects</h2>
+                <a href="projects.html" class="see-all-link" data-i18n="btn_view_all">See All <i class="fas fa-arrow-right"></i></a>
             </div>
-            
+
             <div class="projects-grid">
                 <div class="project-card tilt-effect">
                     <div class="img-wrapper">
                         <div class="project-img" style="background-image: url('assets/portifolio/port-dkz.png');"></div>
+                        <div class="project-overlay"><i class="fas fa-external-link-alt"></i></div>
                     </div>
                     <div class="project-content">
                         <div class="tags-row"><span class="tag web">HTML</span><span class="tag web">JS</span><span class="tag web">CSS</span></div>
                         <h3 class="project-title">DKZ Developer Port</h3>
                         <p class="project-desc" data-i18n="proj_dkz">Professional site for a high-profile game developer.</p>
-                        <a href="https://www.dkzdev.com" target="_blank" class="btn-project" data-i18n="btn_code">View Code <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://www.dkzdev.com" target="_blank" class="btn-project" data-i18n="btn_code">View Case <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="project-card tilt-effect">
                     <div class="img-wrapper">
                         <div class="project-img" style="background-image: url('assets/studios/neox.png');"></div>
+                        <div class="project-overlay"><i class="fas fa-external-link-alt"></i></div>
                     </div>
                     <div class="project-content">
                         <div class="tags-row"><span class="tag web">HTML</span><span class="tag web">JS</span><span class="tag web">CSS</span></div>
                         <h3 class="project-title">Studio Neox Website</h3>
                         <p class="project-desc" data-i18n="proj_neox">Professional site for a developers studio.</p>
-                        <a href="https://www.neox.website" target="_blank" class="btn-project" data-i18n="btn_code">View Code <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://www.neox.website" target="_blank" class="btn-project" data-i18n="btn_code">View Case <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="project-card tilt-effect">
                     <div class="img-wrapper">
                         <div class="project-img" style="background-image: url('assets/studios/4f.png');"></div>
+                        <div class="project-overlay"><i class="fas fa-external-link-alt"></i></div>
                     </div>
                     <div class="project-content">
                         <div class="tags-row"><span class="tag web">HTML</span><span class="tag web">JS</span><span class="tag web">CSS</span></div>
                         <h3 class="project-title">4F Studios Website</h3>
                         <p class="project-desc" data-i18n="proj_4f">Professional site for a game development studio.</p>
-                        <a href="https://4fanstudios.com" target="_blank" class="btn-project" data-i18n="btn_code">View Code <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://4fanstudios.com" target="_blank" class="btn-project" data-i18n="btn_code">View Case <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
-
-            <div class="view-all-container">
-                <a href="projects.html" class="btn-view-all">
-                    <span data-i18n="btn_view_all">Explore All Projects</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
         </section>
 
+        <!-- CONTACT -->
         <section id="contact-area" class="reveal">
             <div class="glass-container">
                 <div class="contact-visual">
@@ -265,7 +373,6 @@
                         <div class="orbit"></div>
                     </div>
                 </div>
-
                 <div class="contact-form-wrapper">
                     <form id="discord-form">
                         <div class="input-wrapper">
@@ -273,19 +380,16 @@
                             <label for="contact-name">Name / Company</label>
                             <div class="input-border"></div>
                         </div>
-
                         <div class="input-wrapper">
                             <input type="email" id="contact-email" name="email" required placeholder=" " autocomplete="off">
                             <label for="contact-email">Email Address</label>
                             <div class="input-border"></div>
                         </div>
-
                         <div class="input-wrapper full-width">
                             <textarea id="contact-msg" name="message" required placeholder=" " rows="4"></textarea>
                             <label for="contact-msg">Your Message</label>
                             <div class="input-border"></div>
                         </div>
-
                         <button type="submit" class="submit-btn">
                             <span data-i18n="btn_send">Send Message</span> <i class="fas fa-rocket"></i>
                         </button>
@@ -301,6 +405,7 @@
                 <div class="footer-links">
                     <a href="projects.html" data-i18n="nav_projects">Projects</a>
                     <a href="arsenal.html">The Arsenal</a>
+                    <a href="#security" data-i18n="nav_cyber">Cybersec</a>
                 </div>
             </div>
         </footer>
